@@ -8,4 +8,4 @@
     <link href="assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 
     <link href="assets/css/animate.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet"> 
