@@ -10,12 +10,13 @@ function db_connect(){
 
 function confrim_db_connect($connection){
     if(!$connection){
-        $msg = "Connection is Failed : ";
+        $msg = "Connection is failed : ";
         $msg .= mysqli_connect_error();
         $msg .= mysqli_connect_errno();
         exit($msg);
     } else{
-        echo "Connection is ready to use";
+        $msg = "Connection is ready to use";
+        exit($msg);
     }
 }
 
