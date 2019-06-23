@@ -20,4 +20,4 @@ function confrim_db_connect($connection){
     }
 }
 
-$db = db_connect();
+
