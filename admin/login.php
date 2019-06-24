@@ -1,3 +1,18 @@
+<?php 
+require_once 'initilize.php';
+
+if(is_post_request()){
+    $login =  [];
+    $login['email'] = $_POST['uname'] ?? '';
+    $login['password'] = md5($_POST['pass']) ?? '';
+    echo '<pre>';
+    print_r($login);
+    echo '</pre>';
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,14 +43,14 @@
             <h3>Welcome to IN+</h3>
 
             <p>Login in. To see it in action.</p>
-            <form class="m-t" role="form">
+            <form class="m-t" role="form" method="POST" enctype="multipart/form-data">
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Username">
+                    <input type="email" class="form-control" placeholder="Username" name="uname" id="uname">
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="pass" id="pass">
                 </div>
-                <button type="submit" class="btn btn-primary block full-width m-b">Login</button>
+                <button type="submit" name="login" id="login" class="btn btn-primary block full-width m-b">Login</button>
 
                 <a href="#"><small>Forgot password?</small></a>
                 <!-- <p class="text-muted text-center"><small>Do not have an account?</small></p> -->
