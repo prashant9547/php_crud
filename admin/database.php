@@ -16,7 +16,7 @@ function confrim_db_connect($connection){
         exit($msg);
     }
      else{
-        $msg = "Connection is ready to use";
+        echo $msg = "Connection is ready to use";
         // exit($msg);
     }
 }

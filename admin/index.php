@@ -1,7 +1,12 @@
 <?php
-if(!isset($_SESSION['email'])){
-    header('location:login.php');
-}
+    session_start();
+    if(!isset($_SESSION['adminEmail'])) {
+        header('location:login.php');
+        die(); // directly stop the execution of script 
+    } else{
+        $adminEmail = $_SESSION['adminEmail'];
+        $adminName = $_SESSION['adminName'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

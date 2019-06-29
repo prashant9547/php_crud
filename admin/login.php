@@ -5,9 +5,7 @@ if(is_post_request()){
     $login =  [];
     $login['email'] = $_POST['uname'] ?? '';
     $login['password'] = md5($_POST['pass']) ?? '';
-    echo '<pre>';
-    print_r($login);
-    echo '</pre>';
+    $result = loginChk($login);
 
 }
 ?>
