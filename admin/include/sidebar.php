@@ -3,7 +3,7 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header">
                 <div class="dropdown profile-element"> <span>
-                        <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                        <img alt="image" class="img-circle" src="assets/img/profile_small.jpg" />
                     </span>
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold"><?php echo $adminName; ?></strong>
@@ -14,7 +14,7 @@
                         <li><a href="#">Contacts</a></li>
                         <li><a href="#">Mailbox</a></li>
                         <li class="#"></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">

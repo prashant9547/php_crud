@@ -1,8 +1,8 @@
 <?php
+require_once 'initilize.php';
     session_start();
     if(!isset($_SESSION['adminEmail'])) {
-        header('location:login.php');
-        die(); // directly stop the execution of script 
+        redirect_to('login');
     } else{
         $adminEmail = $_SESSION['adminEmail'];
         $adminName = $_SESSION['adminName'];

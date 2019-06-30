@@ -24,7 +24,8 @@ function loginChk($login){
        session_start();
         echo $_SESSION['adminEmail'] = $adminEmail;
         echo $_SESSION['adminName'] = $adminName;
-        header("location:index.php");
+        //header("location:index.php");
+        redirect_to('index');
 } else{
     echo "Email Or Password Is Wrong!";
 }

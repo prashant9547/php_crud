@@ -13,12 +13,13 @@ function confrim_db_connect($connection){
         $msg = "Connection is failed : ";
         $msg .= mysqli_connect_error();
         $msg .= mysqli_connect_errno();
-        exit($msg);
-    }
-     else{
-        echo $msg = "Connection is ready to use";
         // exit($msg);
+        die();
     }
+    //  else{
+    //     echo $msg = "Connection is ready to use";
+    //     die(); 
+    // }
 }
 
 
