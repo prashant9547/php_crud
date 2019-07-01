@@ -35,6 +35,8 @@
     <!-- GITTER -->
     <script src="assets/js/plugins/gritter/jquery.gritter.min.js"></script>
 
+    <script src="assets/js/plugins/dataTables/datatables.min.js"></script>
+    
     <!-- Sparkline -->
     <script src="assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 
@@ -50,6 +52,30 @@
 
     <script>
         $(document).ready(function() {
+            $('.dataTables-example').DataTable({
+                pageLength: 25,
+                responsive: true,
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy'},
+                    {extend: 'csv'},
+                    {extend: 'excel', title: 'ExampleFile'},
+                    {extend: 'pdf', title: 'ExampleFile'},
+
+                    {extend: 'print',
+                     customize: function (win){
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+
+                            $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                    }
+                    }
+                ]
+
+            });
+
             setTimeout(function() {
                 toastr.options = {
                     closeButton: true,

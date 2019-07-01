@@ -4,6 +4,8 @@
     <!-- Toastr style -->
     <link href="assets/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 
+    <link href="assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    
     <!-- Gritter -->
     <link href="assets/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
 

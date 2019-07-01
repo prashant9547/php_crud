@@ -26,10 +26,10 @@
                         class="fa arrow"></span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Forms</span><span
+                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">About</span><span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="#">Basic form</a></li>
+                    <li><a href="<?php echo url_for('/about/index.php'); ?>">About</a></li>
                 </ul>
             </li>
         </ul>
