@@ -11,6 +11,7 @@ basename(dirname(__FILE__));  //   admin
 
 define("ADMIN", dirname(__FILE__)); //  localhost/opt/lampp/htdocs/php_crud/admin
 //echo ADMIN.'<br/>'; 
+define("INCLUDE_FILE", dirname(__FILE__).'/include');
   
 define("PROJECT_PATH", dirname(ADMIN)); // /opt/lampp/htdocs/php_crud
 //echo PROJECT_PATH.'<br/>';

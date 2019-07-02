@@ -13,13 +13,13 @@ include'../initilize.php';
 
     <title>INSPINIA | Data Tables</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet">
 
-    <link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+    <link href="../assets/css/plugins/dataTables/datatables.min.css" rel="stylesheet">
 
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../assets/css/animate.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -866,7 +866,7 @@ include'../initilize.php';
             </div>
             </div>
         </div>
-       <?php include (ADMIN.'/include/footer.php'); ?>
+       <?php include (INCLUDE_FILE.'/footer.php'); ?>
 
         </div>
         </div>
