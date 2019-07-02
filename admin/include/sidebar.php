@@ -1,3 +1,4 @@
+
 <nav class="navbar-default navbar-static-side" role="navigation">
     <div class="sidebar-collapse">
         <ul class="nav metismenu" id="side-menu">
@@ -29,7 +30,7 @@
                 <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">About</span><span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
-                    <li><a href="<?php echo url_for('/about/index.php'); ?>">About</a></li>
+                    <li><a href="<?php echo WWW_ROOT.'/admin/about/index.php'; ?>">About</a></li>
                 </ul>
             </li>
         </ul>

@@ -1,5 +1,6 @@
 <?php
 require_once 'initilize.php';
+
     session_start();
     if(!isset($_SESSION['adminEmail'])) {
         redirect_to('login');
@@ -14,15 +15,15 @@ require_once 'initilize.php';
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INSPINIA | Dashboard v.2</title>
-    <?php require 'include/css.php'; ?>
+    <?php require (ADMIN.'/include/css.php'); ?>
 
 </head>
 <body>
     <div id="wrapper">
-        <?php require 'include/sidebar.php'; ?>
+        <?php require (ADMIN.'/include/sidebar.php'); ?>
         <div id="page-wrapper" class="gray-bg">
             <div class="row border-bottom">
-                <?php require 'include/header.php'; ?>
+                <?php require (ADMIN.'/include/header.php'); ?>
             </div>
             <div class="wrapper wrapper-content">
                 <div class="row">
@@ -81,7 +82,8 @@ require_once 'initilize.php';
                     </div>
                 </div>
             </div>
-            <?php require 'include/footer.php'; ?>
+            <?php require (ADMIN.'/include/footer.php'); ?>
+            
         </div>
     </div>
 </body>
