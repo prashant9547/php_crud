@@ -17,7 +17,7 @@ define("PROJECT_PATH", dirname(ADMIN)); // /opt/lampp/htdocs/php_crud
 //echo PROJECT_PATH.'<br/>';
   //define("PUBLIC_PATH", PROJECT_PATH . '/public');
   
-define("ABOUT_PATH", ADMIN . '/about'); // /opt/lampp/htdocs/php_crud/admin/about
+define("ABOUT_PATH", ADMIN); // /opt/lampp/htdocs/php_crud/admin/about
 //echo ABOUT_PATH.'<br/>';
   //exit;
 
@@ -28,6 +28,8 @@ define("ABOUT_PATH", ADMIN . '/about'); // /opt/lampp/htdocs/php_crud/admin/abou
   define("WWW_ROOT", $doc_root); //   /php_cr
   //echo WWW_ROOT.'<br/>';
   //exit;
+  // echo $_SERVER['DOCUMENT_ROOT'];
+  // exit;
 
 require_once 'database.php';
 require_once 'functions.php';

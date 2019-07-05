@@ -82,7 +82,7 @@ require_once 'initilize.php';
                     </div>
                 </div>
             </div>
-            <?php require (ADMIN.'/include/footer.php'); ?>
+            <?php include ('include/footer.php'); ?>
             
         </div>
     </div>
