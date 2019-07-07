@@ -23,3 +23,11 @@ function redirect_to($url){
     return header("location:$url_redi");
     die();
 }
+
+function html_specialchars($string = ""){
+    return htmlspecialchars($string);
+}
+
+function url_Encode($string = ""){
+    return urlencode($string);
+}

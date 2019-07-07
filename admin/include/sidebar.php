@@ -15,19 +15,19 @@
                         <li><a href="#">Contacts</a></li>
                         <li><a href="#">Mailbox</a></li>
                         <li class="#"></li>
-                        <li><a href="logout.php">Logout</a></li>
+                        <li><a href="<?php echo WWW_ROOT.'/admin/logout.php'; ?>">Logout</a></li>
                     </ul>
                 </div>
                 <div class="logo-element">
                     IN+
                 </div>
             </li>
-            <li class="active">
+            <li>
                 <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span
                         class="fa arrow"></span></a>
             </li>
             <li>
-                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">About</span><span
+                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">About Detail</span><span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">
                     <li><a href="<?php echo WWW_ROOT.'/admin/about/index.php'; ?>">About</a></li>
