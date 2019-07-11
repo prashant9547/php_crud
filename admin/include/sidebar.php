@@ -33,6 +33,13 @@
                     <li><a href="<?php echo WWW_ROOT.'/admin/about/index.php'; ?>">About</a></li>
                 </ul>
             </li>
+            <li>
+                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Social Media Detail</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="<?php echo WWW_ROOT.'/admin/social_media/index.php'; ?>">Social Media</a></li>
+                </ul>
+            </li>
         </ul>
 
     </div>

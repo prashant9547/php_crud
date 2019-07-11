@@ -32,10 +32,12 @@ function loginChk($login){
 
 }
 
-function fetch_all_about(){
+function fetch_all_record($tbl_name){
     global $db;
-    $sql = "SELECT * FROM tbl_about_us ";
+    $sql = "SELECT * FROM $tbl_name ";
     $sql .= "ORDER BY id DESC";
+    // echo $sql;
+    // exit;
     // echo $sql;
     $result = mysqli_query($db,$sql);
     // confrim_result_set($result);

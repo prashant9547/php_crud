@@ -9,7 +9,7 @@ if(!isset($_SESSION['adminEmail'])) {
     $adminEmail = $_SESSION['adminEmail'];
     $adminName = $_SESSION['adminName'];
 }
-$about = fetch_all_record('tbl_about_us');
+$about = fetch_all_record('tbl_social_media');
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +62,7 @@ $about = fetch_all_record('tbl_about_us');
                     <div class="ibox-title">
                         <h5>List About information</h5>
                         <div class="ibox-tools">
-                            <a title="Create" href="<?php echo WWW_ROOT.'/admin/about/create.php'; ?>">
+                            <a title="Create" href="<?php echo WWW_ROOT.'/admin/social_media/create.php'; ?>">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
@@ -74,9 +74,11 @@ $about = fetch_all_record('tbl_about_us');
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
-                        <th>Designation</th>
-                        <th>Email</th>
+                        <th>Facebook</th>
+                        <th>Twitter</th>
+                        <th>google <i class="fa fa-plus"></i></th>
+                        <th>LinkedIn</th>
+                        <th>Youtube</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -85,17 +87,19 @@ $about = fetch_all_record('tbl_about_us');
                     <?php while($row = mysqli_fetch_assoc($about)) { ?>
                     <tr>
                         <td><?php echo html_specialchars($row['id']); ?></td>
-                        <td><?php echo html_specialchars($row['myName']); ?></td>
-                        <td><?php echo html_specialchars($row['myDesignation']); ?></td>
-                        <td><?php echo html_specialchars($row['myEmail']); ?></td>
+                        <td><?php echo html_specialchars(setLimit($row['facebook'])); ?></td>
+                        <td><?php echo html_specialchars(setLimit($row['twitter'])); ?></td>
+                        <td><?php echo html_specialchars(setLimit($row['gmail'])); ?></td>
+                        <td><?php echo html_specialchars(setLimit($row['linkedin'])); ?></td>
+                        <td><?php echo html_specialchars(setLimit($row['youtube'])); ?></td>
                         <td><?php if($row['status'] == 0){
                             echo '<span class="label label-primary">Active</span>';
                         }else{
                             echo '<span class="label label-danger">Deactivee</span>';
                         } ?></td>
                         <td>
-                            <a title="Edit" class="btn btn-primary" href="<?php echo WWW_ROOT.'/admin/about/edit.php?id='.html_specialchars(url_Encode($row['id'])); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                             <a title="Deletee" class="btn btn-danger" onclick="return confrimDelete();" href="<?php echo WWW_ROOT.'/admin/about/delete.php?id='.html_specialchars(url_Encode($row['id']));?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <a title="Edit" class="btn btn-primary" href="<?php echo WWW_ROOT.'/admin/social_media/edit.php?id='.html_specialchars(url_Encode($row['id'])); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                             <a title="Deletee" class="btn btn-danger" onclick="return confrimDelete();" href="<?php echo WWW_ROOT.'/admin/social_media/delete.php?id='.html_specialchars(url_Encode($row['id']));?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <?php } ?>
@@ -103,9 +107,11 @@ $about = fetch_all_record('tbl_about_us');
                     <tfoot>
                     <tr>
                         <th>Id</th>
-                        <th>Name</th>
-                        <th>Designation</th>
-                        <th>Email</th>
+                        <th>Facebook</th>
+                        <th>Twitter</th>
+                        <th>google <i class="fa fa-plus"></i></th>
+                        <th>LinkedIn</th>
+                        <th>Youtube</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>

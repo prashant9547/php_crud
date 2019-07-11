@@ -31,3 +31,7 @@ function html_specialchars($string = ""){
 function url_Encode($string = ""){
     return urlencode($string);
 }
+
+function setLimit($string = ""){
+    return mb_strimwidth($string,0,20,"...");
+}
