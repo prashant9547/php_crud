@@ -81,25 +81,25 @@ if(is_post_request()){
                             <div class="ibox-content">
                                 <p>* Required all field </p>
                                 <form class="form-horizontal" method="post" enctype="multipart/form-data">
-                                    <div class="form-group"><label class="col-lg-2 control-label">Your Name</label>
+                                    <div class="form-group"><label class="col-lg-2 control-label">Facebook</label>
                                         <div class="col-lg-5"><input type="text" name="name" id="name" placeholder="Enter Name" class="form-control"> 
                                                 <!-- <span class="help-block m-b-none">Example
                                                 block-level help text here.</span> -->
                                         </div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label">Your Email</label>
+                                    <div class="form-group"><label class="col-lg-2 control-label">Twitter</label>
                                         <div class="col-lg-5"><input type="email" name="email" id="email" placeholder="Enter Email"
                                                 class="form-control"></div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label">Your Designation</label>
+                                    <div class="form-group"><label class="col-lg-2 control-label">LinkedIn</label>
                                         <div class="col-lg-5"><input type="text" name="designation" id="designation" placeholder="Enter Designation"
                                                 class="form-control"></div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label">Your Website</label>
+                                    <div class="form-group"><label class="col-lg-2 control-label">Youtube</label>
                                         <div class="col-lg-5"><input type="url" name="website" id="website" placeholder="Enter Website"
                                                 class="form-control"></div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label">Your Skype Id</label>
+                                    <div class="form-group"><label class="col-lg-2 control-label">Pintrest</label>
                                         <div class="col-lg-5"><input type="text" name="skypeId" id="skypeId" placeholder="Enter Skype-id"
                                                 class="form-control"></div>
                                     </div>
