@@ -34,6 +34,13 @@
                 </ul>
             </li>
             <li>
+                <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">About More Detail</span><span
+                        class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                    <li><a href="<?php echo WWW_ROOT.'/admin/about_more/index.php'; ?>">About More</a></li>
+                </ul>
+            </li>
+            <li>
                 <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">Social Media Detail</span><span
                         class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse">

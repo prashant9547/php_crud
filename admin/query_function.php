@@ -1,5 +1,4 @@
 <?php 
-
 function loginChk($login){
 
     // to declare connection variable to global use within a function

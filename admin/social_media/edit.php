@@ -119,6 +119,8 @@ if(is_post_request()){
                                         <div class="col-lg-offset-2 col-lg-5">
                                             <button title="Update" class="btn btn-sm btn-primary" name="addAbout" id="addAbout" type="submit">Update</button>
                                             <a title="Back" href="<?php echo WWW_ROOT.'/admin/about/index.php'; ?>" class="btn btn-sm btn-info" name="addBack" id="addBack" type="submit">Back</a>
+                                            <button title="Submit" class="btn btn-sm btn-primary" name="addSM" id="addSM" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit </button>
+                                            <a title="Back" href="<?php echo WWW_ROOT.'/admin/social_media/index.php'; ?>" class="btn btn-sm btn-info" name="smBack" id="smBack" type="submit"><i class="fa fa-arrow-left" aria-hidden="true"> Back </i></a>
                                         </div>
                                     </div>
                                 </form>

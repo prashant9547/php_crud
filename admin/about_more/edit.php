@@ -2,13 +2,21 @@
 
 include '../initilize.php';
 
+$id = $_GET['id'] ?? '';
+
 session_start();
+
 if (!isset($_SESSION['adminEmail'])) {
     redirect_to('login');
 } else {
     $adminEmail = $_SESSION['adminEmail'];
     $adminName = $_SESSION['adminName'];
 }
+
+$about_us = fetch_one_record_by_id($id);
+// print_r($about_us);
+// exit;
+
 if(is_post_request()){
     $aboutUs = [];
     $aboutUs['name'] = $_POST['name'] ?? '';
@@ -19,7 +27,7 @@ if(is_post_request()){
     $aboutUs['cell'] = $_POST['cell'] ?? '';
     // print_r($aboutUs);
     // exit;
-    $result = aboutInsert($aboutUs);
+    $result = aboutUpdate($aboutUs,$id);
 }
 ?>
 
@@ -58,7 +66,7 @@ if(is_post_request()){
                             <a>About</a>
                         </li>
                         <li class="active">
-                            <strong>Add About</strong>
+                            <strong>Edit About</strong>
                         </li>
                     </ol>
                 </div>
@@ -71,47 +79,46 @@ if(is_post_request()){
                     <div class="col-lg-12">
                         <div class="ibox float-e-margins">
                             <div class="ibox-title">
-                                <h5>Add About Information</h5>
+                                <h5>Update About information</h5>
                                 <div class="ibox-tools">
                                     <!-- <a title="Create" href="<?php echo WWW_ROOT . '/admin/about/create.php'; ?>">
                                         <i class="fa fa-plus"></i>
                                     </a> -->
-                                </div>  
+                                </div>
                             </div>
                             <div class="ibox-content">
                                 <p>* Required all field </p>
                                 <form class="form-horizontal" method="post" enctype="multipart/form-data">
-                                    <div class="form-group"><label class="col-lg-2 control-label"><i class="fa fa-facebook" aria-hidden="true"></i></label>
-                                        <div class="col-lg-5"><input type="text" name="name" id="name" placeholder="Enter Name" class="form-control"> 
+                                    <div class="form-group"><label class="col-lg-2 control-label">Your Name</label>
+                                        <div class="col-lg-5"><input type="text" name="name" value="<?php echo $about_us['myName'] ?>" id="name" placeholder="Enter Name" class="form-control"> 
                                                 <!-- <span class="help-block m-b-none">Example
                                                 block-level help text here.</span> -->
                                         </div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label"><i class="fa fa-twitter" aria-hidden="true"></i></label>
-                                        <div class="col-lg-5"><input type="email" name="email" id="email" placeholder="Enter Twitter-id"
+                                    <div class="form-group"><label class="col-lg-2 control-label">Your Email</label>
+                                        <div class="col-lg-5"><input type="email" name="email" value="<?php echo $about_us['myEmail'] ?>" id="email" placeholder="Enter Email"
                                                 class="form-control"></div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label"><i class="fa fa-linkedin" aria-hidden="true"></i></label>
-                                        <div class="col-lg-5"><input type="text" name="designation" id="designation" placeholder="Enter Linkedin-id"
+                                    <div class="form-group"><label class="col-lg-2 control-label">Your Designation</label>
+                                        <div class="col-lg-5"><input type="text" name="designation" value="<?php echo $about_us['myDesignation'] ?>" id="designation" placeholder="Enter Designation"
                                                 class="form-control"></div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label"><i class="fa fa-youtube" aria-hidden="true"></i></label>
-                                        <div class="col-lg-5"><input type="url" name="website" id="website" placeholder="Enter Youtube Channel"
+                                    <div class="form-group"><label class="col-lg-2 control-label">Your Website</label>
+                                        <div class="col-lg-5"><input type="url" name="website" value="<?php echo $about_us['myWebsite'] ?>" id="website" placeholder="Enter Website"
                                                 class="form-control"></div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label"><i class="fa fa-pinterest-p" aria-hidden="true"></i></label>
-                                        <div class="col-lg-5"><input type="text" name="skypeId" id="skypeId" placeholder="Enter Pinterest-id"
+                                    <div class="form-group"><label class="col-lg-2 control-label">Your Skype Id</label>
+                                        <div class="col-lg-5"><input type="text" name="skypeId" id="skypeId" value="<?php echo $about_us['mySkype'] ?>" placeholder="Enter Skype-id"
                                                 class="form-control"></div>
                                     </div>
-                                    <div class="form-group"><label class="col-lg-2 control-label"><i class="fa fa-google-plus" aria-hidden="true"></i></label>
-                                        <div class="col-lg-5"><input type="tel" name="cell" id="cell" placeholder="Enter Email Address"
+                                    <div class="form-group"><label class="col-lg-2 control-label">Your Cell No</label>
+                                        <div class="col-lg-5"><input type="tel" name="cell" id="cell" value="<?php echo $about_us['myCell'] ?>" placeholder="Enter Cell-No"
                                                 class="form-control"></div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-5">
-                                            <button title="Submit" class="btn btn-sm btn-primary" name="addSM" id="addSM" type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit </button>
-                                            <button title="Reset" class="btn btn-sm btn-danger" name="addReset" id="addReset" type="reset"><i class="fa fa-file-o" aria-hidden="true"></i> Reset </button>
-                                            <a title="Back" href="<?php echo WWW_ROOT.'/admin/social_media/index.php'; ?>" class="btn btn-sm btn-info" name="smBack" id="smBack" type="button"><i class="fa fa-arrow-left" aria-hidden="true"> Back </i></a>
+                                            <button title="Update" class="btn btn-sm btn-primary" name="addAbout" id="addAbout" type="submit">Update</button>
+                                            <a title="Back" href="<?php echo WWW_ROOT.'/admin/about/index.php'; ?>" class="btn btn-sm btn-info" name="addBack" id="addBack" type="submit">Back</a>
                                         </div>
                                     </div>
                                 </form>
@@ -125,13 +132,3 @@ if(is_post_request()){
     </div>
 </body>
 </html>
-<script>
-    function confrimDelete() {
-        var retVal = confirm("Are u sure to delete?");
-        if (retVal == true) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-</script>
