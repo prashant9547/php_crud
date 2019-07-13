@@ -13,7 +13,8 @@ if (!isset($_SESSION['adminEmail'])) {
     $adminName = $_SESSION['adminName'];
 }
 
-$about_us = fetch_one_record_by_id($id);
+$tblName = "tbl_about_us";
+$about_us = fetch_one_record_by_id($id,$tblName);
 // print_r($about_us);
 // exit;
 
@@ -90,7 +91,7 @@ if(is_post_request()){
                                 <p>* Required all field </p>
                                 <form class="form-horizontal" method="post" enctype="multipart/form-data">
                                     <div class="form-group"><label class="col-lg-2 control-label">Your Name</label>
-                                        <div class="col-lg-5"><input type="text" name="name" value="<?php echo $about_us['myName'] ?>" id="name" placeholder="Enter Name" class="form-control"> 
+                                        <div class="col-lg-5"><input type="text" name="name" value="<?php echo $about_us['myName']; ?>" id="name" placeholder="Enter Name" class="form-control"> 
                                                 <!-- <span class="help-block m-b-none">Example
                                                 block-level help text here.</span> -->
                                         </div>

@@ -12,8 +12,8 @@ if (!isset($_SESSION['adminEmail'])) {
     $adminEmail = $_SESSION['adminEmail'];
     $adminName = $_SESSION['adminName'];
 }
-
-$result = aboutDelete($id);
+$tblName = "tbl_about_us";
+$result = aboutDelete($id,$tblName);
 // print_r($about_us);
 // exit;
 

@@ -15,11 +15,11 @@ define("INCLUDE_FILE", dirname(__FILE__).'/include');
   
 define("PROJECT_PATH", dirname(ADMIN)); // /opt/lampp/htdocs/php_crud
 //echo PROJECT_PATH.'<br/>';
-  //define("PUBLIC_PATH", PROJECT_PATH . '/public');
+//define("PUBLIC_PATH", PROJECT_PATH . '/public');
   
 define("ABOUT_PATH", ADMIN); // /opt/lampp/htdocs/php_crud/admin/about
 //echo ABOUT_PATH.'<br/>';
-  //exit;
+//exit;
 
   $public_end = strpos($_SERVER['SCRIPT_NAME'], '/public') + 9; // 7
   //echo $public_end.'<br/>';

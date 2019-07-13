@@ -126,11 +126,11 @@ if(is_post_request()){
     $aboutMore['bback'] = $filename3 ?? '';
     $aboutMore['vurl'] = $_POST['vurl'] ?? '';
     $aboutMore['editor1'] = $_POST['editor1'] ?? '';
-    echo "<pre>";
-    print_r($aboutMore);
-    echo "</pre>";
-    exit;
-    $result = aboutMoreInsert($aboutMore);
+    // echo "<pre>";
+    // print_r($aboutMore);
+    // echo "</pre>";
+    // exit;
+    $result = aboutInsertMore($aboutMore);
 }
 ?>
 

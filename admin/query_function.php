@@ -43,10 +43,10 @@ function fetch_all_record($tbl_name){
     return $result;
 }
 
-function fetch_one_record_by_id($id){
+function fetch_one_record_by_id($id,$tblName){
 	global $db;
 
-    $sql = "SELECT * FROM tbl_about_us ";
+    $sql = "SELECT * FROM $tblName ";
     $sql .= "WHERE id='" . $id . "'";
     // echo $sql;
     $result = mysqli_query($db, $sql);
@@ -108,9 +108,9 @@ function aboutUpdate($aboutus, $id){
     }
 }
 
-function aboutDelete($id){
+function aboutDelete($id,$tblName){
 	global $db;
-	$sql = "DELETE FROM tbl_about_us ";
+	$sql = "DELETE FROM $tblName ";
 	$sql .= "WHERE id='" . $id . "' ";
 	$sql .= "LIMIT 1";
 	$result = mysqli_query($db,$sql); 
@@ -119,7 +119,55 @@ function aboutDelete($id){
     } else {
       // UPDATE failed
       echo mysqli_error($db);
-      db_disconnect($db);
+      //db_disconnect($db);
+      exit;
+    }
+}
+
+function aboutInsertMore($aboutMore){
+	global $db;
+	$sql = "INSERT INTO tbl_about_more ";
+	$sql .= "(profileImage, resumePdf, visitCardFront, visitCardBack, videoUrl, description) ";
+	$sql .= "VALUES(";
+	$sql .= "'" . $aboutMore['pimage'] . "', '" . $aboutMore['resume'] . "', '" . $aboutMore['bfront'] . "', ";
+	$sql .= "'" . $aboutMore['bback'] . "', '" . $aboutMore['vurl'] . "', '" . $aboutMore['editor1'] . "'";
+	$sql .= ")";
+	// echo $sql;
+	// exit;
+	$result = mysqli_query($db, $sql);
+	if($result) {
+		header('location:'.WWW_ROOT.'/admin/about_more/index.php');
+	  } else {
+		// INSERT failed
+		echo mysqli_error($db);
+		//db_disconnect($db);
+		exit;
+	  }
+	// return $result;
+}
+
+function aboutMoreUpdate($aboutmore, $id){
+	global $db;
+	$sql = "UPDATE tbl_about_more SET ";
+    $sql .= "profileImage='" . $aboutmore['pimage'] . "', ";
+    $sql .= "resumePdf='" . $aboutmore['resume'] . "', ";
+	$sql .= "visitCardFront='" . $aboutmore['bfront'] . "' ,";
+	$sql .= "visitCardBack='" . $aboutmore['bback'] . "' ,";
+	$sql .= "videoUrl='" . $aboutmore['vurl'] . "' ,";
+	$sql .= "description='" . $aboutmore['editor1'] . "' ";
+    $sql .= "WHERE id='" . $id . "' ";
+	$sql .= "LIMIT 1";
+	// echo $sql;
+	// exit;
+
+    $result = mysqli_query($db, $sql);
+    // For UPDATE statements, $result is true/false
+    if($result) {
+		header('location:'.WWW_ROOT.'/admin/about_more/index.php');
+    } else {
+      // UPDATE failed
+      echo mysqli_error($db);
+      //db_disconnect($db);
       exit;
     }
 }
