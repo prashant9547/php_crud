@@ -12,7 +12,7 @@ if (!isset($_SESSION['adminEmail'])) {
     $adminEmail = $_SESSION['adminEmail'];
     $adminName = $_SESSION['adminName'];
 }
-$tblName = "tbl_about_more";
+$tblName = "tbl_slider_image";
 $result = aboutDelete($id,$tblName);
 // print_r($about_us);
 // exit;

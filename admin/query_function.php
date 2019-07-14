@@ -171,3 +171,46 @@ function aboutMoreUpdate($aboutmore, $id){
       exit;
     }
 }
+
+function sliderInsert($sliderImage){
+	global $db;
+	$sql = "INSERT INTO tbl_slider_image ";
+	$sql .= "(imageName) ";
+	$sql .= "VALUES(";
+	$sql .= "'" . $sliderImage['sliderimage'] . "'";
+	$sql .= ")";
+	// echo $sql;
+	// exit;
+	$result = mysqli_query($db, $sql);
+	if($result) {
+		header('location:'.WWW_ROOT.'/admin/slider/index.php');
+	  } else {
+		// INSERT failed
+		echo mysqli_error($db);
+		db_disconnect($db);
+		exit;
+	  }
+	// return $result;
+}
+
+function sliderUpdate($sliderImage, $id){
+	global $db;
+	$sql = "UPDATE tbl_slider_image SET ";
+    $sql .= "imageName='" . $sliderImage['sliderimage'] . "'";
+    $sql .= "WHERE id='" . $id . "' ";
+	$sql .= "LIMIT 1";
+	// echo $sql;
+	// exit;
+
+    $result = mysqli_query($db, $sql);
+    // For UPDATE statements, $result is true/false
+    if($result) {
+		header('location:'.WWW_ROOT.'/admin/slider/index.php');
+    } else {
+      // UPDATE failed
+      echo mysqli_error($db);
+      //db_disconnect($db);
+      exit;
+    }
+}
+

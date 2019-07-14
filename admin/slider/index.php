@@ -9,7 +9,8 @@ if(!isset($_SESSION['adminEmail'])) {
     $adminEmail = $_SESSION['adminEmail'];
     $adminName = $_SESSION['adminName'];
 }
-$about = fetch_all_record('tbl_about_more');
+$tblName = "tbl_slider_image";
+$about = fetch_all_record($tblName);
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +63,7 @@ $about = fetch_all_record('tbl_about_more');
                     <div class="ibox-title">
                         <h5>List About information</h5>
                         <div class="ibox-tools">
-                            <a title="Create" href="<?php echo WWW_ROOT.'/admin/about_more/create.php'; ?>">
+                            <a title="Create" href="<?php echo WWW_ROOT.'/admin/slider/create.php'; ?>">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
@@ -74,10 +75,7 @@ $about = fetch_all_record('tbl_about_more');
                     <thead>
                     <tr>
                         <th>Id</th>
-                        <th>Profile Image</th>
-                        <th>Resume</th>
-                        <th>Visiting Card</th>
-                        <th>Video Url</th>
+                        <th>Slider Image</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -86,18 +84,15 @@ $about = fetch_all_record('tbl_about_more');
                     <?php while($row = mysqli_fetch_assoc($about)) { ?>
                     <tr>
                         <td><?php echo html_specialchars($row['id']); ?></td>
-                        <td><img width="100" height="80" src="<?php echo WWW_ROOT."/admin/assets/img/profileimage/".html_specialchars($row['profileImage']); ?>"></td>
-                        <td><a href="<?php echo WWW_ROOT."/admin/assets/img/resumefile/".html_specialchars($row['resumePdf']); ?>" target="_blank"><?php echo html_specialchars($row['resumePdf']); ?></a></td>
-                        <td><img width="100" height="80" src="<?php echo WWW_ROOT."/admin/assets/img/visitingcard/".html_specialchars($row['visitCardFront']); ?>"> <img width="100" height="80" src="<?php echo WWW_ROOT."/admin/assets/img/visitingcard/".html_specialchars($row['visitCardBack']); ?>"> </td>
-                        <td><?php echo html_specialchars(setLimit($row['videoUrl'])); ?></td>
+                        <td><img width="100" height="80" src="<?php echo WWW_ROOT."/admin/assets/img/sliderimage/".html_specialchars($row['imageName']); ?>"></td>
                         <td><?php if($row['status'] == 0){
                             echo '<span class="label label-primary">Active</span>';
                         }else{
                             echo '<span class="label label-danger">Deactivee</span>';
                         } ?></td>
                         <td>
-                            <a title="Edit" class="btn btn-primary" href="<?php echo WWW_ROOT.'/admin/about_more/edit.php?id='.html_specialchars(url_Encode($row['id'])); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                             <a title="Deletee" class="btn btn-danger" onclick="return confrimDelete();" href="<?php echo WWW_ROOT.'/admin/about_more/delete.php?id='.html_specialchars(url_Encode($row['id']));?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <a title="Edit" class="btn btn-primary" href="<?php echo WWW_ROOT.'/admin/slider/edit.php?id='.html_specialchars(url_Encode($row['id'])); ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                             <a title="Deletee" class="btn btn-danger" onclick="return confrimDelete();" href="<?php echo WWW_ROOT.'/admin/slider/delete.php?id='.html_specialchars(url_Encode($row['id']));?>"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
                     </tr>
                     <?php } ?>
@@ -105,9 +100,7 @@ $about = fetch_all_record('tbl_about_more');
                     <tfoot>
                     <tr>
                         <th>Id</th>
-                        <th>Profile Image</th>
-                        <th>Resume</th>
-                        <th>Video Link</th>
+                        <th>Slider Image</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
